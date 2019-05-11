@@ -1,0 +1,29 @@
+<idea-plugin>
+  <id>io.nyaruko</id>
+  <name>BraceSelect</name>
+  <version>1.0</version>
+  <vendor url="http://www.nyaruko.io">Nyaruko</vendor>
+
+  <description><![CDATA[
+      Mimics the selection feature from Eclipse in which double clicking just inside of brackets or quotes selects up to the closing quote
+    ]]></description>
+
+  <change-notes><![CDATA[
+      1.0: Basic single-line select functionality completed.
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="173.0"/>
+  <extensions defaultExtensionNs="com.intellij"/>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="BraceSelect.select" class="io.nyaruko.braceselect.Select" text="BraceSelect"
+            description="Move caret to closing character of left pair with select">
+      <mouse-shortcut keystroke="doubleClick" keymap="$default"/>
+      <add-to-group group-id="EditorActions" anchor="before"
+                    relative-to-action="EditorPreviousWordInDifferentHumpsModeWithSelection"/>
+    </action>
+  </actions>
+
+</idea-plugin>
